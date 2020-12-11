@@ -13,7 +13,7 @@ public class Koneksi {
 
     private static Koneksi instance = new Koneksi();
     private static Connection conn;
-    static String namakoneksi = "jdbc:mysql://localhost/db_tugasPL";
+    static String namakoneksi = "jdbc:mysql://localhost/db_toko";
     static String username = "root";
     static String password = "";
 

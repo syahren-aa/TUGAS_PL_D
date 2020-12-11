@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/dao/Koneksi.java</file>
-            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/web/index.html</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/dao/BarangDAO.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/dao/DetailTransaksiDAO.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/dao/PenggunaDAO.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/dao/TransaksiDAO.java</file>
         </group>
     </open-files>
 </project-private>
