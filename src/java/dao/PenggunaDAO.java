@@ -22,10 +22,10 @@ import java.util.List;
 
 public class PenggunaDAO {
     
-    public Pengguna login(String username, String password){
+    public int login(String username, String password){
         Pengguna pengguna = null;
         try{    
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi.Koneksi();
             Statement st = con.createStatement();
             String sql = "SELECT * FROM tb_pengguna WHERE username=? && password=?";
             ResultSet rs;
@@ -33,16 +33,11 @@ public class PenggunaDAO {
             ps.setString(1, username);
             ps.setString(2, password);
             int i = ps.executeUpdate();
-            rs = ps.executeQuery();
-            pengguna.setId(rs.getInt("id"));
-            pengguna.setNama(rs.getString("nama"));
-            pengguna.setUsername(rs.getString("username") );
-            pengguna.setPassword(rs.getString("password"));
-            pengguna.setRole(rs.getString("role"));
+            return i;
         }catch(SQLException e){
             System.err.println("read all error: "+e.getMessage());
+            return 0;
         }
-        return pengguna;
     }
     
     public List<Pengguna> getAll() {

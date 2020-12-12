@@ -4,9 +4,33 @@
         <servlet-name>PenggunaService</servlet-name>
         <servlet-class>service.PenggunaService</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TransaksiService</servlet-name>
+        <servlet-class>service.TransaksiService</servlet-class>
+       </servlet>
+   <servlet> 
+        <servlet-name>DetailTransaksiService</servlet-name>
+        <servlet-class>service.TransaksiDetailService</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BarangService</servlet-name>
+        <servlet-class>service.Barang</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PenggunaService</servlet-name>
         <url-pattern>/PenggunaService</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BarangService</servlet-name>
+        <url-pattern>/BarangService</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DetailTransaksiService</servlet-name>
+        <url-pattern>/DetailTransaksiService</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>  
+        <servlet-name>TransaksiService</servlet-name>
+        <url-pattern>/TransaksiService</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

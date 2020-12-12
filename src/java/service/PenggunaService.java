@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.RequestDispatcher;
 
 public class PenggunaService extends HttpServlet{
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -34,24 +35,16 @@ public class PenggunaService extends HttpServlet{
             int result = new dao.TransaksiDAO().deleteOne(id);
             resp=(result>0)?"Berhasil Hapus Data":"Gagal Hapus Data";
         }
-        else if(request.getParameter("action").equals("login")){
-            String result = new dao.PenggunaDAO().login(username,password).getRole();
-            if(result =="admin"){
-            
-            }else if(result =="user"){
-                
-            }else{
-                resp=(result!=null)?"login sukses":"silahkan cek ulang username dan password";
-            }
-            }
         response.sendRedirect("index.jsp?res="+resp);
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);

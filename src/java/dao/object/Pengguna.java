@@ -11,6 +11,17 @@ public class Pengguna {
     String username;
     String password;
     String role;
+
+    public Pengguna(int id, String nama, String username, String password, String role) {
+        this.id=id;
+        this.nama=nama;
+        this.username=username;
+        this.password=password;
+        this.role=role;
+    }
+
+    public Pengguna() {
+     }
     public int getId() {
         return id;
     }
