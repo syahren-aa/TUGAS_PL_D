@@ -61,7 +61,7 @@ public class DetailTransaksiDAO {
         return detail;
     }
     
-    public int insertOne(int id, int id_transaksi, int id_barang, int jumlah, int sub_total_harga) {
+    public int insertOne(int id, int id_transaksi, int id_barang, int jumlah, float sub_total_harga) {
         try {
             Connection con = Koneksi.getConnection();
             Statement st = con.createStatement();
@@ -94,7 +94,7 @@ public class DetailTransaksiDAO {
             return 0;
         }
     }
-    public int updateOne(int id, int id_transaksi, int id_barang, int jumlah, int sub_total_harga) {
+    public int updateOne(int id, int id_transaksi, int id_barang, int jumlah, float sub_total_harga) {
         try {
             Connection con = Koneksi.getConnection();
             String sql = "UPDATE tb_detail_transaksi SET id_transaksi=?, id_barang=?, jumlah=?, sub_total_harga where id=?";

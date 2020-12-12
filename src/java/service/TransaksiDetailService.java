@@ -11,21 +11,25 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class PenggunaService {
+/**
+ *
+ * @author acer
+ */
+public class TransaksiDetailService {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        String nama = request.getParameter("waktu");
-        String username = request.getParameter("total_harga");
-        String password = request.getParameter("total_bayar");
-        String role = request.getParameter("total_kembalian");
+        int idTransaksi = Integer.parseInt(request.getParameter("id_transaksi"));
+        int idBarang = Integer.parseInt(request.getParameter("id_barang"));
+        int jumlah = Integer.parseInt(request.getParameter("jumlah"));
+        float subTotalHarga = Float.parseFloat(request.getParameter("sub_total_harga"));
         String resp="";
         if (request.getParameter("action").equals("insert")){
-            int result = new dao.PenggunaDAO().insertOne(id, nama, username, password, role);
+            int result = new dao.DetailTransaksiDAO().insertOne(id, idTransaksi, idBarang, jumlah, subTotalHarga);
             resp=(result>0)?"Berhasil Tambah Data":"Gagal Tambah Data";
         }
         else if (request.getParameter("action").equals("update")){
-            int result = new dao.PenggunaDAO().updateOne(id, nama, username, password, role);
+            int result = new dao.DetailTransaksiDAO().updateOne(id, idTransaksi, idBarang, jumlah, subTotalHarga);
             resp=(result>0)?"Berhasil Ubah Data":"Gagal Ubah Data";
         }
         else if (request.getParameter("action").equals("delete")){
