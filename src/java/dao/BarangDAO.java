@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -60,13 +61,13 @@ public class BarangDAO {
         return barang;
     }
     
-    public int insertOne(int id, String nama, float harga, int stok) {
+    public int insertOne(String nama, float harga, int stok) {
         try {
             Connection con = Koneksi();
             Statement st = con.createStatement();
             String sql = "INSERT INTO tb_barang (id,nama,harga,stok) VALUES (?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, Types.NULL);
             ps.setString(2, nama);
             ps.setFloat(3, harga);
             ps.setInt(4, stok);

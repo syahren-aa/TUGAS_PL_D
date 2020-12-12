@@ -22,22 +22,26 @@ import java.util.List;
 
 public class PenggunaDAO {
     
-    public int login(String username, String password){
+    public Pengguna login(String username, String password){
         Pengguna pengguna = null;
-        try{    
-            Connection con = Koneksi.Koneksi();
+        try {
+            Connection con = Koneksi();
             Statement st = con.createStatement();
-            String sql = "SELECT * FROM tb_pengguna WHERE username=? && password=?";
-            ResultSet rs;
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, username);
-            ps.setString(2, password);
-            int i = ps.executeUpdate();
-            return i;
-        }catch(SQLException e){
-            System.err.println("read all error: "+e.getMessage());
-            return 0;
+            ResultSet rs = st.executeQuery("SELECT * FROM tb_pengguna WHERE username = '"+username+"' AND password = '"+password+"'");
+            while (rs.next()) {
+                pengguna = new Pengguna();
+                pengguna.setId(rs.getInt("id"));
+                pengguna.setNama(rs.getString("nama"));
+                pengguna.setUsername(rs.getString("username"));
+                pengguna.setUsername(rs.getString("password"));
+                pengguna.setRole(rs.getString("role"));
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            System.err.println("read one error: "+ex.getMessage());
         }
+        
+        return pengguna;
     }
     
     public List<Pengguna> getAll() {

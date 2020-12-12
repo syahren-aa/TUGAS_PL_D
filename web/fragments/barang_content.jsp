@@ -9,11 +9,18 @@
 <%@page import="java.util.Locale"%>
 <%@page import="dao.object.Barang"%>
 <%@page import="java.util.List"%>
+<% 
+    if(session.getAttribute("E_TOKO_NAMA") == null || session.getAttribute("E_TOKO_ROLE") == null) {
+        response.sendRedirect("login.jsp");
+    } else {
+%>
 <div class="content-area">
+  <% if(session.getAttribute("E_TOKO_ROLE").equals("Admin")) { %>
   <div class="add-circle-button d-flex justify-content-center align-items-center touch-button" data-toggle="modal" data-target="#barang-modal">
     <div class="vertical-box"></div>
     <div class="horizontal-box"></div>
   </div>
+  <% } %>
   <div class="box-content">
     <div class="box-content-head">
       <span class="head-text">Data Barang</span>
@@ -45,12 +52,23 @@
                         + "<td>" + barang.getNama() + "</td>"
                         + "<td>" + NumberFormat.getCurrencyInstance(new Locale("in","ID")).format(barang.getHarga()) + "</td>"
                         + "<td>" + barang.getStok() + "</td>"
-                        + "<td>"
-                          + "<span class='action-button touch-button alert-warning' data-toggle='modal' data-target='#barang-modal'>Edit</span>"
-                          + "<span class='action-button touch-button alert-danger'>Hapus</span>"
-                        + "</td>"
-                      + "</tr>"
+                        
                     );
+                    
+                    if(session.getAttribute("E_TOKO_ROLE").equals("Admin")) {
+                        out.print(
+                           "<td>"
+                                + "<span class='action-button touch-button alert-warning' data-toggle='modal' data-target='#barang-modal'>Edit</span>"
+                                + "<a class='action-button touch-button alert-danger' href='"+ "barang?id=" + barang.getId()+"'>Hapus</a>"
+                              + "</td>"
+                            + "</tr>"
+                        );
+                    } else {
+                        out.print(
+                           "<td>-</td>"
+                            + "</tr>"
+                        );
+                    }
                   }
                 } else {
                   out.print(
@@ -79,26 +97,27 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="barang-form">
+        <form id="barang-form" method="POST" action="barang">
+          <input type="hidden" name="action" value="Simpan" />
           <div class="form-group">
             <label for="barang__nama">Nama</label>
-            <input type="text" id="barang__nama" class="form-control" />
+            <input type="text" id="barang__nama" name="nama" class="form-control" />
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="barang__harga">Harga</label>
-              <input type="text" id="barang__harga" class="form-control" />
+              <input type="text" id="barang__harga" name="harga" class="form-control" />
             </div>
             <div class="form-group col-md-6">
               <label for="barang__stok">Stok</label>
-              <input type="text" id="barang__stok" class="form-control" />
+              <input type="text" id="barang__stok" name="stok" class="form-control" />
             </div>
           </div>
+          <button type="submit" class="btn-primary-custom touch-button">Simpan</button>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn-primary-custom touch-button">Simpan</button>
       </div>
     </div>
   </div>
 </div>
+
+<% } %>

@@ -7,14 +7,22 @@
     <servlet>
         <servlet-name>TransaksiService</servlet-name>
         <servlet-class>service.TransaksiService</servlet-class>
-       </servlet>
-   <servlet> 
+    </servlet>
+    <servlet>
         <servlet-name>DetailTransaksiService</servlet-name>
         <servlet-class>service.TransaksiDetailService</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>BarangService</servlet-name>
-        <servlet-class>service.Barang</servlet-class>
+        <servlet-class>service.BarangService</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginService</servlet-name>
+        <servlet-class>service.LoginService</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutService</servlet-name>
+        <servlet-class>service.LogoutService</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PenggunaService</servlet-name>
@@ -22,15 +30,23 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>BarangService</servlet-name>
-        <url-pattern>/BarangService</url-pattern>
+        <url-pattern>/barang</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DetailTransaksiService</servlet-name>
         <url-pattern>/DetailTransaksiService</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>  
+    <servlet-mapping>
         <servlet-name>TransaksiService</servlet-name>
         <url-pattern>/TransaksiService</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginService</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutService</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

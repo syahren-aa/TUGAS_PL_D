@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+    if(session.getAttribute("E_TOKO_NAMA") == null || session.getAttribute("E_TOKO_ROLE") == null) {
+        response.sendRedirect("login.jsp");
+    } else {
+%>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -27,4 +32,4 @@
     <script src="js/app.js"></script>
   </body>
 </html>
-
+<% } %>

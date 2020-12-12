@@ -7,6 +7,11 @@
 <%@page import="dao.object.Pengguna"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+    if(session.getAttribute("E_TOKO_NAMA") == null || session.getAttribute("E_TOKO_ROLE") == null) {
+        response.sendRedirect("login.jsp");
+    } else {
+%>
 <div class="content-area">
   <div class="add-circle-button d-flex justify-content-center align-items-center touch-button">
     <div class="vertical-box"></div>
@@ -112,3 +117,4 @@
     </div>
   </div>
 </div>
+<% } %>

@@ -11,16 +11,23 @@
 <%@page import="dao.object.Transaksi"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+    if(session.getAttribute("E_TOKO_NAMA") == null || session.getAttribute("E_TOKO_ROLE") == null) {
+        response.sendRedirect("login.jsp");
+    } else {
+%>
 <div class="content-area">
   <div class="box-content">
     <div class="box-content-head">
       <span class="head-text">Data Transaksi</span>
     </div>
     <div class="box-content-body">
+      <% if(session.getAttribute("E_TOKO_ROLE").equals("Kasir")) { %>
       <div class="add-circle-button d-flex justify-content-center align-items-center touch-button">
         <div class="vertical-box"></div>
         <div class="horizontal-box"></div>
       </div>
+      <% } %>
       <table id="transaksi-table" class="table hover">
         <thead>
           <tr>
@@ -125,3 +132,4 @@
     </div>
   </div>
 </div>
+<% } %>

@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+    if(session.getAttribute("E_TOKO_NAMA") == null || session.getAttribute("E_TOKO_ROLE") == null) {
+        response.sendRedirect("login.jsp");
+    } else {
+%>
 <div id="sidebar-wrapper" class="d-flex flex-column">
   <div class="head-sidebar d-flex justify-content-center align-items-center">
     <h3>E-TOKO</h3>
@@ -33,6 +38,7 @@
         <% } %>
           <a href="transaksi.jsp">Transaksi</a>
         </li>
+        <% if(session.getAttribute("E_TOKO_ROLE").equals("Admin")) { %>
         <% if(request.getServletPath().equals("/pengguna.jsp")) { %>
         <li class="single-sidebar-list active">
         <% } else { %> 
@@ -40,10 +46,14 @@
         <% } %>
           <a href="pengguna.jsp">Pengguna</a>
         </li>
+        <% } %>
       </ul>
     </div>
     <div class="foot-sidebar">
-      <button type="submit" class="logout-button">Logout</button>
+        <form method="POST" action="logout">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
     </div>
   </div>
 </div>
+<% } %>

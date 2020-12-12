@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% 
+    if(session.getAttribute("E_TOKO_NAMA") != null && session.getAttribute("E_TOKO_ROLE") != null) {
+        response.sendRedirect("index.jsp");
+    } else {
+%>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -17,11 +22,13 @@
   </head>
   <body>
     <div id="login-wrapper" th:fragment="login-wrapper">
-      <form class="login-form" method="POST" th:action="@{/login}">
+      <form class="login-form" method="POST" action="login">
         <h3 class="title-form">E-TOKO</h3>
-        <!-- <div class="form-group">
-          <div th:if="${param.error}" class="alert alert-danger" role="alert">Username/Password tidak sesuai. Masukkan ulang.</div>
-        </div> -->
+        <% if(request.getParameter("error") != null) { %>
+        <div class="form-group">
+            <div class="alert alert-danger" role="alert">Email/Password tidak sesuai. Masukkan ulang.</div>
+        </div>
+        <% } %>
         <div class="form-group">
           <input type="text" class="form-control" name="username" placeholder="Username" required />
         </div>
@@ -35,3 +42,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
   </body>
 </html>
+<% } %>
