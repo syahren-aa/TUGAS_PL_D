@@ -6,33 +6,29 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
+import com.mysql.cj.jdbc.MysqlDataSource;
 
 public class Koneksi {
-
-    private static Koneksi instance = new Koneksi();
     private static Connection conn;
-    static String namakoneksi = "jdbc:mysql://localhost/db_toko";
-    static String username = "root";
-    static String password = "";
+    
+    public static Connection Koneksi() {
+        if(conn == null) {
+            try {
+                MysqlDataSource dataSource = new MysqlDataSource();
 
-    public static Koneksi getInstance() {
-        return instance;
-    }
-
-    public static Connection getConnection() {
+                dataSource.setServerName("localhost");
+                dataSource.setPort(3306);
+                dataSource.setDatabaseName("db_toko");
+                dataSource.setUser("root");
+                dataSource.setPassword("");
+                
+                conn = dataSource.getConnection();
+            } catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        
         return conn;
     }
-
-    private Koneksi() {
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection(
-                    namakoneksi, username, password);
-        } catch (SQLException | ClassNotFoundException ex) {
-            System.err.println(ex.getMessage());
-        }
-    }
-   
 }

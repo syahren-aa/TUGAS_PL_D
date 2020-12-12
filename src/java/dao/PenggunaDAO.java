@@ -5,6 +5,7 @@
  */
 package dao;
 
+import static dao.Koneksi.Koneksi;
 import dao.object.Pengguna;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,7 +23,7 @@ public class PenggunaDAO {
     public List<Pengguna> getAll() {
         List<Pengguna> list = new ArrayList<Pengguna>();
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM tb_pengguna");
             while (rs.next()) {
@@ -44,7 +45,7 @@ public class PenggunaDAO {
     public Pengguna getById(int id){
         Pengguna pengguna = null;
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM tb_pengguna WHERE id = '"+id+"'");
             while (rs.next()) {
@@ -63,7 +64,7 @@ public class PenggunaDAO {
     
     public int insertOne(int id, String nama, String username, String password, String role) {
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             Statement st = con.createStatement();
             String sql = "INSERT INTO tb_pengguna (id,nama,username,password, role) VALUES (?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -82,7 +83,7 @@ public class PenggunaDAO {
     }
     public int deleteOne(int id) {
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             String sql = "DELETE FROM tb_pengguna WHERE id=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1,id);
@@ -96,7 +97,7 @@ public class PenggunaDAO {
     }
     public int updateOne(int id, String nama, String username, String password, String role) {
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             String sql = "UPDATE tb_pengguna SET nama=?, username=?, password=?, role=? where id=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(2, nama);

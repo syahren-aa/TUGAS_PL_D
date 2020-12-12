@@ -1,0 +1,230 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 12, 2020, 11:08:16 AM
+    Author     : Riett
+*/
+
+@import "general.css";
+
+/* SIDEBAR */
+
+#sidebar-wrapper {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #F77000;
+}
+
+#sidebar-wrapper .head-sidebar {
+  height: 80px;
+  border-bottom: 2px solid #E5F3F4;
+  color: #fff;
+}
+
+#sidebar-wrapper .head-sidebar h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+#sidebar-wrapper .body-sidebar li {
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+#sidebar-wrapper .body-sidebar li.active {
+  background-color: #3ab764;
+}
+
+#sidebar-wrapper .body-sidebar li:not(.active):hover {
+  background-color: rgba(58, 183, 100, .15);
+}
+
+#sidebar-wrapper .body-sidebar li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #fff;
+}
+
+#sidebar-wrapper .body-sidebar li a:hover {
+  text-decoration: none;
+}
+
+#sidebar-wrapper .body-sidebar .sidebar-list li a {
+  padding: 10px 15px;
+}
+
+#sidebar-wrapper .foot-sidebar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+#sidebar-wrapper .foot-sidebar .logout-button {
+  display: inline-block;
+  border: none;
+  color: #fff;
+  background-color: #d33d2c;
+  text-decoration: none;
+  width: 100%;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  transition: 0.4s ease-in-out;
+}
+
+#sidebar-wrapper .foot-sidebar .logout-button:hover {
+  background-color: #c91f0c;
+}
+
+/* MAIN CONTENT */
+
+#main-content-wrapper {
+  width: calc(100% - 200px);
+  min-height: 100%;
+  position: absolute;
+  left: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #E5F3F4;
+}
+
+#main-content-wrapper .head-main-content {
+  height: 50px;
+  background-color: #F2FAFC;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  left: 200px;
+  z-index: 50;
+  width: calc(100% - 200px);
+}
+
+#main-content-wrapper .head-main-content .user-section {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#main-content-wrapper .head-main-content .user-section .user-name {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+#main-content-wrapper .body-main-content {
+	width: 100%;
+	position: absolute;
+	top: 50px;
+	left: 0;
+}
+
+#main-content-wrapper .body-main-content .content-area {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+#main-content-wrapper .body-main-content .greetings-box {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 6px 11px;
+  margin: 15px;
+}
+
+#main-content-wrapper .body-main-content .greetings-box .user-name {
+  font-weight: 500;
+}
+
+#main-content-wrapper .body-main-content .box-content {
+  border-radius: 5px;
+}
+
+#main-content-wrapper .body-main-content .box-content:not(.action-area) {
+  background-color: #fff;
+}
+
+#main-content-wrapper .body-main-content .box-content .box-content-head {
+  padding: 7px 15px 9px;
+  background-color: #f6f6f6;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #eee;
+  font-weight: 500;
+  color: #777;
+  text-transform: uppercase;
+}
+
+#main-content-wrapper .body-main-content .box-content .box-content-body {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 15px 15px 0;
+}
+
+#main-content-wrapper .body-main-content .box-content .form-check .form-check-label {
+  position: relative;
+  left: 6px;
+  top: 2px;
+}
+
+#main-content-wrapper .body-main-content .add-circle-button {
+  position: fixed;
+  z-index: 100;
+  right: 15px;
+  bottom: 15px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #63CC63;
+  color: #fff;
+  font-size: 2.1em;
+  cursor: pointer;
+}
+
+#main-content-wrapper .body-main-content .add-circle-button:hover {
+  background-color: #55b555;
+}
+
+#main-content-wrapper .body-main-content .add-circle-button .vertical-box {
+  width: 7px;
+  height: 60%;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#main-content-wrapper .body-main-content .add-circle-button .horizontal-box {
+  width: 60%;
+  height: 7px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#main-content-wrapper .body-main-content table .action-button {
+  margin-left: 4px;
+  margin-right: 4px;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 3px 10px;
+  width: 70px;
+}

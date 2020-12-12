@@ -1,0 +1,132 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 12, 2020, 11:08:02 AM
+    Author     : Riett
+*/
+
+*,
+*::before,
+*::after {
+  color: inherit;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  color: #444;
+  background-color: #E5F3F4;
+}
+
+form {
+  width: 100%;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border: 1px solid #40C2C4 !important;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+button,
+button:active {
+  outline: none !important;
+  border: none !important;
+}
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: #f8f8f8;
+}
+
+label.required:after {
+  content: "*";
+  color: #fc4d44;
+  margin-left: 3px;
+  font-size: 1.05em;
+}
+
+.touch-button {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-primary-custom {
+  background-color: #4FC878;
+  color: #fff;
+  border-radius: 5px;
+  letter-spacing: 0.025em;
+  border: none;
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 1;
+  height: 38px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-primary-custom:hover {
+  background-color: #3ab764;
+}
+
+table thead th {
+  border-top: none !important;
+}
+
+table tbody tr:last-of-type td {
+  border-bottom: 1px solid #eee;
+}
+
+/* DATATABLE CUSTOM */
+
+table.dataTable {
+  margin-bottom: 12px;
+  border-bottom: none !important;
+}
+
+table.dataTable thead th {
+  border-bottom: none !important;
+  background-color: #f9f9f9;
+  font-weight: 500;
+}
+
+.dataTables_length select {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.dataTables_filter {
+  margin-bottom: 6px;
+}
+
+.dataTables_filter input {
+  margin-left: 8px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+	margin-bottom: 15px !important;
+}

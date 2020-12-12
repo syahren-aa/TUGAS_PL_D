@@ -5,6 +5,7 @@
  */
 package dao;
 
+import static dao.Koneksi.Koneksi;
 import dao.object.Barang;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,7 +22,7 @@ public class BarangDAO {
     public List<Barang> getAll() {
         List<Barang> list = new ArrayList<Barang>();
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM tb_barang");
             while (rs.next()) {
@@ -42,7 +43,7 @@ public class BarangDAO {
     public Barang getById(int id){
         Barang barang = null;
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM tb_barang WHERE id = '"+id+"'");
             while (rs.next()) {
@@ -61,7 +62,7 @@ public class BarangDAO {
     
     public int insertOne(int id, String nama, float harga, int stok) {
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             Statement st = con.createStatement();
             String sql = "INSERT INTO tb_barang (id,nama,harga,stok) VALUES (?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -79,7 +80,7 @@ public class BarangDAO {
     }
     public int deleteOne(int id) {
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             String sql = "DELETE FROM tb_barang WHERE id=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1,id);
@@ -93,7 +94,7 @@ public class BarangDAO {
     }
     public int updateOne(int id, String nama, float harga, int stok) {
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             String sql = "UPDATE barang SET nama=?, harga=?, stok=? where id=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,nama);

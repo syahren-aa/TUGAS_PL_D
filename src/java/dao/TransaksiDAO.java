@@ -5,6 +5,7 @@
  */
 package dao;
 
+import static dao.Koneksi.Koneksi;
 import dao.object.Transaksi;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,7 +24,7 @@ public class TransaksiDAO {
     public List<Transaksi> getAll() {
         List<Transaksi> list = new ArrayList<Transaksi>();
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM tb_transaksi");
             while (rs.next()) {
@@ -45,7 +46,7 @@ public class TransaksiDAO {
     public Transaksi getById(int id){
         Transaksi transaksi = null;
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM tb_transaksi WHERE id = '"+id+"'");
             while (rs.next()) {
@@ -65,7 +66,7 @@ public class TransaksiDAO {
     
     public int insertOne(int id, Date waktu, float total_harga, float total_bayar, float total_kembalian) {
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             Statement st = con.createStatement();
             String sql = "INSERT INTO tb_barang (id,nama,harga,stok) VALUES (?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -84,7 +85,7 @@ public class TransaksiDAO {
     }
     public int deleteOne(int id) {
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             String sql = "DELETE FROM tb_transaksi WHERE id=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1,id);
@@ -98,7 +99,7 @@ public class TransaksiDAO {
     }
     public int updateOne(int id, Date waktu, float total_harga, float total_bayar, float total_kembalian) {
         try {
-            Connection con = Koneksi.getConnection();
+            Connection con = Koneksi();
             String sql = "UPDATE tb_transaksi SET waktu=?, total_harga=?, total_bayar=?, total_kembalian=? where id=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1,id);
