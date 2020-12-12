@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,13 +87,13 @@ public class PenggunaDAO {
         return pengguna;
     }
     
-    public int insertOne(int id, String nama, String username, String password, String role) {
+    public int insertOne(String nama, String username, String password, String role) {
         try {
             Connection con = Koneksi();
             Statement st = con.createStatement();
             String sql = "INSERT INTO tb_pengguna (id,nama,username,password, role) VALUES (?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, Types.NULL);
             ps.setString(2, nama);
             ps.setString(3, username);
             ps.setString(4, password);

@@ -88,31 +88,33 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="pengguna-form">
+        <form id="pengguna-form" method="POST" action="pengguna">
           <div class="form-row">
+            <input type="hidden" name="action" value="Simpan" />
             <div class="form-group col-md-6">
               <label for="pengguna__nama">Nama</label>
-              <input type="text" id="pengguna__nama" class="form-control" />
+              <input type="text" id="pengguna__nama" name="nama" class="form-control" />
             </div>
             <div class="form-group col-md-6">
               <label for="pengguna__role">Role</label>
-              <input type="text" id="pengguna__role" class="form-control" />
+              <select class="form-control" name="role" id="pengguna__role">
+                  <option value="Kasir">Admin</option>
+                  <option value="Kasir">Kasir</option>
+              </select>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="pengguna__username">Username</label>
-              <input type="text" id="pengguna__username" class="form-control" />
+              <input type="text" id="pengguna__username" name="username" class="form-control" />
             </div>
             <div class="form-group col-md-6">
               <label for="pengguna__password">Password</label>
-              <input type="text" id="pengguna__password" class="form-control" />
+              <input type="text" id="pengguna__password" name="password" class="form-control" />
             </div>
           </div>
+          <button type="submit" class="btn-primary-custom touch-button">Simpan</button>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn-primary-custom touch-button">Simpan</button>
       </div>
     </div>
   </div>
