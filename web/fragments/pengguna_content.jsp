@@ -56,7 +56,7 @@
                         + "<td>" + pengguna.getRole() + "</td>"
                         + "<td>"
                           + "<span class='action-button touch-button alert-warning' data-toggle='modal' data-target='#pengguna-modal'>Edit</span>"
-                          + "<span class='action-button touch-button alert-danger'>Hapus</span>"
+                          + "<a class='action-button touch-button alert-danger' href='"+ "pengguna?id=" + pengguna.getId() +"'>Hapus</a>"
                         + "</td>"
                       + "</tr>"
                     );

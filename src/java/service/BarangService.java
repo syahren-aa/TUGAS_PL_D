@@ -21,7 +21,7 @@ public class BarangService extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        int result = new dao.TransaksiDAO().deleteOne(id);
+        int result = new dao.BarangDAO().deleteOne(id);
         String resp=(result>0)?"Berhasil Hapus Data":"Gagal Hapus Data";
         
         response.sendRedirect("barang.jsp");
