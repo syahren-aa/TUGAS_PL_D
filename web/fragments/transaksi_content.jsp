@@ -17,6 +17,10 @@
       <span class="head-text">Data Transaksi</span>
     </div>
     <div class="box-content-body">
+      <div class="add-circle-button d-flex justify-content-center align-items-center touch-button">
+        <div class="vertical-box"></div>
+        <div class="horizontal-box"></div>
+      </div>
       <table id="transaksi-table" class="table hover">
         <thead>
           <tr>
