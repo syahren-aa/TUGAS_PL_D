@@ -18,38 +18,20 @@ import javax.servlet.RequestDispatcher;
  * @author acer
  */
 public class TransaksiService extends HttpServlet{
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Date waktu = Date.valueOf(request.getParameter("waktu"));
-        float total_harga = Float.parseFloat(request.getParameter("total_harga"));
-        float total_bayar = Float.parseFloat(request.getParameter("total_bayar"));
-        float total_kembalian = Float.parseFloat(request.getParameter("total_kembalian"));
-        String resp="";
-        if (request.getParameter("action").equals("insert")){
-            int result = new dao.TransaksiDAO().insertOne(id, waktu, total_harga, total_bayar, total_kembalian);
-            resp=(result>0)?"Berhasil Tambah Data":"Gagal Tambah Data";
-        }
-        else if (request.getParameter("action").equals("update")){
-            int result = new dao.TransaksiDAO().updateOne(id, waktu, total_harga, total_bayar, total_kembalian);
-            resp=(result>0)?"Berhasil Ubah Data":"Gagal Ubah Data";
-        }
-        else if (request.getParameter("action").equals("delete")){
-            int result = new dao.TransaksiDAO().deleteOne(id);
-            resp=(result>0)?"Berhasil Hapus Data":"Gagal Hapus Data";
-        }        
-        response.sendRedirect("index.jsp?res="+resp);
-    }
-
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        int id = Integer.parseInt(request.getParameter("id"));
+        int result = new dao.TransaksiDAO().deleteOne(id);
+        String resp=(result>0)?"Berhasil Hapus Data":"Gagal Hapus Data";
+        
+        response.sendRedirect("transaksi.jsp");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
     }
 }

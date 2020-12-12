@@ -58,7 +58,7 @@
                         + "<td>" + NumberFormat.getCurrencyInstance(new Locale("in","ID")).format(transaksi.getTotal_kembalian()) + "</td>"
                         + "<td>"
                           + "<span class='action-button touch-button alert-info' data-toggle='modal' data-target='#detail-transaksi-modal'>Detail</span>"
-                          + "<span class='action-button touch-button alert-danger'>Hapus</span>"
+                          + "<a class='action-button touch-button alert-danger' href='"+ "transaksi?id=" + transaksi.getId()+"'>Hapus</a>"
                         + "</td>"
                       + "</tr>"
                     );

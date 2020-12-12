@@ -38,7 +38,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TransaksiService</servlet-name>
-        <url-pattern>/TransaksiService</url-pattern>
+        <url-pattern>/transaksi</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginService</servlet-name>
