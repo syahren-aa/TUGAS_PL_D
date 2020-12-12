@@ -10,7 +10,7 @@
 <%@page import="dao.object.Barang"%>
 <%@page import="java.util.List"%>
 <div class="content-area">
-  <div class="add-circle-button d-flex justify-content-center align-items-center touch-button">
+  <div class="add-circle-button d-flex justify-content-center align-items-center touch-button" data-toggle="modal" data-target="#barang-modal">
     <div class="vertical-box"></div>
     <div class="horizontal-box"></div>
   </div>
@@ -79,7 +79,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="detail-transaksi-form">
+        <form id="barang-form">
           <div class="form-group">
             <label for="barang__nama">Nama</label>
             <input type="text" id="barang__nama" class="form-control" />

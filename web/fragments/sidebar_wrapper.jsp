@@ -33,6 +33,13 @@
         <% } %>
           <a href="transaksi.jsp">Transaksi</a>
         </li>
+        <% if(request.getServletPath().equals("/pengguna.jsp")) { %>
+        <li class="single-sidebar-list active">
+        <% } else { %> 
+        <li class="single-sidebar-list">
+        <% } %>
+          <a href="pengguna.jsp">Pengguna</a>
+        </li>
       </ul>
     </div>
     <div class="foot-sidebar">

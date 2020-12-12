@@ -40,4 +40,20 @@ $(document).ready(function() {
           }
         ]
     });
+
+   /**
+   * Customize "Tabel Pengguna" DataTable
+   **/
+    $('#pengguna-table').DataTable({
+        columnDefs: [
+          {
+            targets: [-1],
+            orderable: false
+          },
+          {
+            targets: [0, -1],
+            className: "dt-head-center dt-body-center"
+          }
+        ]
+    });
 });

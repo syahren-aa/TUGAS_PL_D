@@ -22,6 +22,8 @@
     <%@include file="transaksi_content.jsp" %>
     <% } else if(request.getServletPath().equals("/riwayat_trenseksi.jsp")) { %>
     <%@include file="riwayat_transaksi_content.jsp" %>
+    <% } else if(request.getServletPath().equals("/pengguna.jsp")) { %>
+    <%@include file="pengguna_content.jsp" %>
     <% } %>
   </div>
 </div>
