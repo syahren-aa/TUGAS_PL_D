@@ -46,7 +46,7 @@
                         + "<td>" + NumberFormat.getCurrencyInstance(new Locale("in","ID")).format(barang.getHarga()) + "</td>"
                         + "<td>" + barang.getStok() + "</td>"
                         + "<td>"
-                          + "<span class='action-button touch-button alert-warning'>Edit</span>"
+                          + "<span class='action-button touch-button alert-warning' data-toggle='modal' data-target='#barang-modal'>Edit</span>"
                           + "<span class='action-button touch-button alert-danger'>Hapus</span>"
                         + "</td>"
                       + "</tr>"
@@ -65,6 +65,40 @@
           %>
         </tbody>
       </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="barang-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Data Barang</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="detail-transaksi-form">
+          <div class="form-group">
+            <label for="barang__nama">Nama</label>
+            <input type="text" id="barang__nama" class="form-control" />
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="barang__harga">Harga</label>
+              <input type="text" id="barang__harga" class="form-control" />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="barang__stok">Stok</label>
+              <input type="text" id="barang__stok" class="form-control" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-primary-custom touch-button">Simpan</button>
+      </div>
     </div>
   </div>
 </div>

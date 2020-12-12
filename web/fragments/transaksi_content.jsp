@@ -83,7 +83,44 @@
         </button>
       </div>
       <div class="modal-body">
-        
+        <form id="detail-transaksi-form">
+          <div class="form-group">
+            <label for="detail-transaksi__waktu">Waktu</label>
+            <input type="text" id="detail-transaksi__waktu" class="form-control" />
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="detail-transaksi__totalharga">Total harga</label>
+              <input type="text" id="detail-transaksi__totalharga" class="form-control" />
+            </div>
+            <div class="form-group col-md-4">
+              <label for="detail-transaksi__totalbayar">Total Bayar</label>
+              <input type="text" id="detail-transaksi__totalbayar" class="form-control" />
+            </div>
+            <div class="form-group col-md-4">
+              <label for="detail-transaksi__totalkembalian">Total Kembalian</label>
+              <input type="text" id="detail-transaksi__totalkembalian" class="form-control" />
+            </div>
+          </div>
+        </form>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Nama</th>
+              <th>Jumlah</th>
+              <th>Sub Total Harga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td>Beng-beng</td>
+              <td>12</td>
+              <td>Rp 12.500,00</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

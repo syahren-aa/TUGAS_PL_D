@@ -82,8 +82,8 @@ label.required:after {
   border-radius: 5px;
   letter-spacing: 0.025em;
   border: none;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
   line-height: 1;
   height: 38px;
   transition: 0.3s ease-in-out;
@@ -95,6 +95,7 @@ label.required:after {
 
 table thead th {
   border-top: none !important;
+  font-weight: 500 !important;
 }
 
 table tbody tr:last-of-type td {

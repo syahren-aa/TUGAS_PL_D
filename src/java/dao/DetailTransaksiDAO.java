@@ -21,29 +21,7 @@ import java.sql.PreparedStatement;
  * @author acer
  */
 public class DetailTransaksiDAO {
-    public List<Detail_Transaksi> getAllByIdTransaksi(int id) {
-        List<Detail_Transaksi> list = new ArrayList<Detail_Transaksi>();
-        try {
-            Connection con = Koneksi();
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM tb_detail_transaksi");
-            while (rs.next()) {
-                Detail_Transaksi detail = new Detail_Transaksi();
-                detail.setIdTransaksi(rs.getInt("idTransaksi"));
-                detail.setIdDetailTransaksi(rs.getInt("idDetailTransaksi"));
-                detail.setIdBarang(rs.getInt("idBarang"));
-                detail.setId_transaksi(rs.getInt("id_transaksi") );
-                detail.setSub_total_harga(rs.getFloat("stok"));
-                list.add(detail);
-            }
-            rs.close();
-        } catch (SQLException ex) {
-            System.err.println("read all error: "+ex.getMessage());
-        }
-       return list;
-    } 
-    
-    public Detail_Transaksi getById(int id){
+    public Detail_Transaksi getAllByIdTransaksi(int id){
         Detail_Transaksi detail = null;
         try {
             Connection con = Koneksi();
