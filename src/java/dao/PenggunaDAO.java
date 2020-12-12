@@ -19,7 +19,32 @@ import java.util.List;
  *
  * @author acer
  */
+
 public class PenggunaDAO {
+    
+    public Pengguna login(String username, String password){
+        Pengguna pengguna = null;
+        try{    
+            Connection con = Koneksi.getConnection();
+            Statement st = con.createStatement();
+            String sql = "SELECT * FROM tb_pengguna WHERE username=? && password=?";
+            ResultSet rs;
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, username);
+            ps.setString(2, password);
+            int i = ps.executeUpdate();
+            rs = ps.executeQuery();
+            pengguna.setId(rs.getInt("id"));
+            pengguna.setNama(rs.getString("nama"));
+            pengguna.setUsername(rs.getString("username") );
+            pengguna.setPassword(rs.getString("password"));
+            pengguna.setRole(rs.getString("role"));
+        }catch(SQLException e){
+            System.err.println("read all error: "+e.getMessage());
+        }
+        return pengguna;
+    }
+    
     public List<Pengguna> getAll() {
         List<Pengguna> list = new ArrayList<Pengguna>();
         try {

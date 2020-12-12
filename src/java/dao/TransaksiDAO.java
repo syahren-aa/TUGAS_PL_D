@@ -30,7 +30,7 @@ public class TransaksiDAO {
             while (rs.next()) {
                 Transaksi transaksi = new Transaksi();
                 transaksi.setId(rs.getInt("id"));
-                transaksi.setWaktu(rs.getDate("waktu"));
+                transaksi.setWaktu(rs.getString("waktu"));
                 transaksi.setTotal_harga(rs.getFloat("total_harga") );
                 transaksi.setTotal_bayar(rs.getFloat("total_bayar"));
                 transaksi.setTotal_kembalian(rs.getFloat("total_kembalian"));
@@ -52,7 +52,7 @@ public class TransaksiDAO {
             while (rs.next()) {
                 transaksi = new Transaksi();
                 transaksi.setId(rs.getInt("id"));
-                transaksi.setWaktu(rs.getDate("waktu"));
+                transaksi.setWaktu(rs.getString("waktu"));
                 transaksi.setTotal_harga(rs.getFloat("total_harga"));
                 transaksi.setTotal_bayar(rs.getFloat("total_bayar"));
                 transaksi.setTotal_kembalian(rs.getFloat("total_kembalian"));

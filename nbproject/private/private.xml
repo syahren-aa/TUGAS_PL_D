@@ -2,6 +2,21 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/dao/object/Transaksi.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/dao/BarangDAO.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/service/PenggunaService.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/dao/Koneksi.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/dao/DetailTransaksiDAO.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/service/TransaksiService.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/service/BarangService.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/dao/PenggunaDAO.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/dao/TransaksiDAO.java</file>
+            <file>file:/D:/Kuliah/Pemrograman/Java/latihan%20lagi/Tugas_PL/src/java/service/TransaksiDetailService.java</file>
+        </group>
+>>>>>>> cab3589607a99247703743c9cfb69c9187834c75
     </open-files>
 </project-private>

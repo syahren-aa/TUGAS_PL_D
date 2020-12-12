@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public class Transaksi {
    int id;
-   Date waktu;
+   String waktu;
    float total_harga;
    float total_bayar;
    float total_kembalian;
@@ -25,11 +25,11 @@ public class Transaksi {
         this.id = id;
     }
 
-    public Date getWaktu() {
+    public String getWaktu() {
         return waktu;
     }
 
-    public void setWaktu(Date waktu) {
+    public void setWaktu(String waktu) {
         this.waktu = waktu;
     }
 
