@@ -50,7 +50,7 @@
                         + "<td>" + NumberFormat.getCurrencyInstance(new Locale("in","ID")).format(transaksi.getTotal_bayar()) + "</td>"
                         + "<td>" + NumberFormat.getCurrencyInstance(new Locale("in","ID")).format(transaksi.getTotal_kembalian()) + "</td>"
                         + "<td>"
-                          + "<span class='action-button touch-button alert-info'>Detail</span>"
+                          + "<span class='action-button touch-button alert-info' data-toggle='modal' data-target='#detail-transaksi-modal'>Detail</span>"
                           + "<span class='action-button touch-button alert-danger'>Hapus</span>"
                         + "</td>"
                       + "</tr>"
@@ -69,6 +69,22 @@
           %>
         </tbody>
       </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="detail-transaksi-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Detail Transaksi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
     </div>
   </div>
 </div>

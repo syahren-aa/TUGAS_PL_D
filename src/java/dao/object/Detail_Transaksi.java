@@ -10,49 +10,67 @@ package dao.object;
  * @author acer
  */
 public class Detail_Transaksi {
-int id;
-    int id_transaksi;
-    int id_barang;
-    int jumlah;
-    float sub_total_harga;
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId_transaksi() {
-        return id_transaksi;
-    }
-
-    public void setId_transaksi(int id_transaksi) {
-        this.id_transaksi = id_transaksi;
-    }
-
-    public int getId_barang() {
-        return id_barang;
-    }
-
-    public void setId_barang(int id_barang) {
-        this.id_barang = id_barang;
-    }
-
-    public int getJumlah() {
-        return jumlah;
-    }
-
-    public void setJumlah(int jumlah) {
-        this.jumlah = jumlah;
-    }
-
-    public float getSub_total_harga() {
-        return sub_total_harga;
-    }
-
-    public void setSub_total_harga(float sub_total_harga) {
-        this.sub_total_harga = sub_total_harga;
+    private int idTransaksi;
+    private int idDetailTransaksi;
+    private int idBarang;
+    private int jumlah;
+    private int harga;
+    private int stok;
+    private String nama;
+    
+    public int getIdTransaksi() {
+        return this.idTransaksi;
     }
     
+    public void setIdTransaksi(int id) {
+        this.idTransaksi = id;
+    }
+    
+    public int getIdDetailTransaksi() {
+        return this.idDetailTransaksi;
+    }
+    
+    public void setIdDetailTransaksi(int id) {
+        this.idDetailTransaksi = id;
+    }
+    
+    public int getIdBarang() {
+        return this.idBarang;
+    }
+    
+    public void setIdBarang(int id) {
+        this.idBarang = id;
+    }
+    
+    public String getNama() {
+        return this.nama;
+    }
+    
+    public void setNama(String n) {
+        this.nama = n;
+    }
+    
+    public int getHarga() {
+        return this.harga;
+    }
+    
+    public void setHarga(int h) {
+        this.harga = h;
+    }
+    
+    public int getJumlah() {
+        return this.jumlah;
+    }
+    
+    public void setJumlah(int j) {
+        this.jumlah = j;
+    }
+    
+    public int getStok() {
+        return this.stok;
+    }
+    
+    public void setStok(int s) {
+        this.stok = s;
+    }
 }
